@@ -1,0 +1,78 @@
+body {
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    width: 100%;
+}
+
+nav {
+    background-color: rgb(180, 112, 63);
+    padding: 6px 0px;
+}
+
+nav ul li a {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.activelink {
+    color: #000;
+}
+
+ul {
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    display: inline;
+    margin-right: 60px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#headerimg {
+    width: 100%;
+}
+
+h1 {
+    color: rgb(100, 68, 25);
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+}
+
+#booktable {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#booktable th {
+    background-color:  rgb(100, 68, 25);
+    color: white;
+    padding: 20px 0px;
+}
+
+#booktable td {
+    background-color:  rgb(163, 140, 110);
+    color: black;
+    padding: 10px 0px;
+}
+
+#booktable button {
+    background-color: white;
+    color: black;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+}
