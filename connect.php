@@ -18,7 +18,6 @@ function reserve($reserve,$BookID){
     if($dbConn->connect_errno) {
         echo "Failed to connect to database:" . $dbConn->connect_error;
     }; 
- 
     $sql = "UPDATE Book SET Status='{$reserve}' WHERE BookID='{$BookID}'";
     if ($dbConn->query($sql) === TRUE) {
         echo "Record updated successfully";
