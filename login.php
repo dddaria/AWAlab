@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,18 +27,14 @@
                 $username = mysqli_real_escape_string($dbConn, $_POST['username']);
                 $password = mysqli_real_escape_string($dbConn, $_POST['password']);
 
-                $sql = "SELECT firstName, lastName FROM person WHERE username = '{$username}' AND password = '{$password}'";
+                $sql = "SELECT username, usertype FROM person WHERE username = '{$username}' AND password = '{$password}'";
                 $stmt = $dbConn->prepare($sql);
-                $stmt->bind_result($fname, $lname);
+                $stmt->bind_result($uname, $utype);
                 $stmt->execute();
-                
-                echo "<table>";
-                while($stmt->fetch()) {
-                    echo "<tr>";
-                    echo "<td> $fname </td><td> $lname </td>";
-                    echo "</tr>";
-                }
-                echo "</table>";
+
+                $stmt->fetch();
+                $_SESSION["username"] = $uname;
+                $_SESSION["usertype"] = $utype;
                 $stmt->close();
             }
         ?>

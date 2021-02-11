@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,9 @@
     <main>
         <h1>HOMEPAGE</h1>
         <p>My paragraph</p>
+        <?php 
+        echo "Session variables are " . $_SESSION["username"] . $_SESSION["usertype"];
+        ?>
     </main>
     <footer>
         <ul>
