@@ -7,6 +7,7 @@
                 <li><a href="browse.php" class="<?php echo($currentPage == 'browse.php') ? 'activelink' : ''?>">Browse Books</a></li>
                 <li><a href="mybooks.php" class="<?php echo($currentPage == 'mybooks.php') ? 'activelink' : ''?>">My Books</a></li>
                 <li><a href="contact.php" class="<?php echo($currentPage == 'contact.php') ? 'activelink' : ''?>">Contact</a></li>
+                <li><a href="login.php" class="<?php echo($currentPage == 'login.php') ? 'activelink' : ''?>">Log in</a></li>
             </ul>
         </nav>
         <img src="img/headerpic.jpg" alt="book picture" id="headerimg">
