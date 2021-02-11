@@ -55,6 +55,8 @@
             //If unreserve is pushed the function runs
             if(isset($_POST['reserve'])){
                 reserve($_POST['reserve'],$_POST['BookID']);
+                echo "<meta http-equiv='refresh' content='0'>";
+ 
             }
 
             mysqli_close($dbConn);

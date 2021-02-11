@@ -20,7 +20,15 @@
         </form>
         <button type="submit" form="login-form" value="submit">Log in</button>
 
+        <?php 
+            if(isset($_POST['username']) && isset($_POST['password'])) {
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $sql = "SELECT * FROM user WHERE username = ? AND password = ?";
 
+                $stmt = $dbConn->prepare($sql);
+            }
+        ?>
     </main>
 
     <footer>
