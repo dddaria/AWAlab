@@ -76,3 +76,25 @@ p {
     border: none;
     border-radius: 8px;
 }
+
+form {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+form input {
+    padding: 6px;
+    margin: 5px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+#login {
+    background-color: rgb(186, 223, 165);
+    color: black;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+}

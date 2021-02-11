@@ -7,26 +7,38 @@
 
 <body>
     <?php
-        //include 'config.php';
-        //include 'connect.php';
+        include 'config.php';
+        include 'connect.php';
         include 'header.php';
     ?>
 
     <main>
         <h1>LOG IN</h1>
-        <form method='' id="login-form">
-            <input name="username" placeholder="Username"></input><br>
-            <input name="password" placeholder="Password"></input>
+        <form method='post' id="login-form">
+            <input name="username" placeholder="Username" required></input><br>
+            <input name="password" placeholder="Password" type="password" required></input><br>
+            <button name="login" type="submit" id="login" value="submit">Log in</button>
         </form>
-        <button type="submit" form="login-form" value="submit">Log in</button>
-
+        
         <?php 
             if(isset($_POST['username']) && isset($_POST['password'])) {
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-                $sql = "SELECT * FROM user WHERE username = ? AND password = ?";
+                //Preventing SQL injection
+                $username = mysqli_real_escape_string($dbConn, $_POST['username']);
+                $password = mysqli_real_escape_string($dbConn, $_POST['password']);
 
+                $sql = "SELECT firstName, lastName FROM person WHERE username = '{$username}' AND password = '{$password}'";
                 $stmt = $dbConn->prepare($sql);
+                $stmt->bind_result($fname, $lname);
+                $stmt->execute();
+                
+                echo "<table>";
+                while($stmt->fetch()) {
+                    echo "<tr>";
+                    echo "<td> $fname </td><td> $lname </td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                $stmt->close();
             }
         ?>
     </main>
