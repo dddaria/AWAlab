@@ -8,9 +8,8 @@
 
 <body>
     <?php
-        include 'config.php';
-        include 'connect.php';
         include 'header.php';
+        include 'connect.php';
     ?>
 
     <main>

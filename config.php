@@ -7,6 +7,11 @@ $user = "root"; //name of the DB user
 $password = ""; //password of the DB user
 $database = "bookDB"; //database name
 
-//session_start();
+//Checking if session isn't hijacked
+if($_SESSION["userIP"] !== $_SERVER['REMOTE_ADDR']) {
+    //If session is hijacked, destroy it
+    session_unset();
+    session_destroy();
+}
 
 ?>

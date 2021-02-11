@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +8,8 @@
 
 <body>
     <?php
-        include 'config.php';
-        include 'connect.php';
         include 'header.php';
+        include 'connect.php';
     ?>
 
     <main>
@@ -35,6 +34,9 @@
                 $stmt->fetch();
                 $_SESSION["username"] = $uname;
                 $_SESSION["usertype"] = $utype;
+
+                //userIP session-variable to prevent session hijacking
+                $_SESSION["userIP"] = $_SERVER['REMOTE_ADDR'];
                 $stmt->close();
             }
         ?>

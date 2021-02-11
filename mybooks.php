@@ -9,9 +9,8 @@
 
 <body>
     <?php
-        include 'config.php';
-        include 'connect.php';
         include 'header.php';
+        include 'connect.php';
     ?>
     <main>
         <h1>MY BOOKS</h1>

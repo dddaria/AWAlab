@@ -8,12 +8,17 @@
 </head>
 
 <body>
-    <?php include 'header.php';?>
+    <?php
+        include 'header.php';
+        include 'connect.php';
+    ?>
     <main>
         <h1>HOMEPAGE</h1>
         <p>My paragraph</p>
-        <?php 
-        echo "Session variables are " . $_SESSION["username"] . $_SESSION["usertype"];
+        <?php
+            echo $_SESSION["username"];
+            echo $_SESSION['usertype'];
+            echo $_SESSION['userIP'];
         ?>
     </main>
     <footer>
