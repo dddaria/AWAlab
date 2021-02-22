@@ -35,10 +35,19 @@
                 $_SESSION["username"] = $uname;
                 $_SESSION["usertype"] = $utype;
 
+                if($uname == NULL) {
+                    echo '<p class="warning"><br>Username or Password incorrect. Try again.</p>';
+                };
+
                 //userIP session-variable to prevent session hijacking
                 $_SESSION["userIP"] = $_SERVER['REMOTE_ADDR'];
                 $stmt->close();
-            }
+            };
+
+            //If admin logs in, redirect to admin page
+            if (isset($_SESSION["usertype"]) == "admin") {
+                header("Location: http://localhost/lab1/admin.php", true, 301);
+            };
         ?>
     </main>
 

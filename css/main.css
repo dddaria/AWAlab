@@ -98,3 +98,9 @@ form input {
     border-radius: 8px;
     margin-top: 10px;
 }
+
+.warning {
+    color:rgb(189, 82, 50);
+    text-align: center;
+    margin: 0 auto;
+}

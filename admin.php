@@ -10,12 +10,13 @@
 <body>
     <?php
         include 'header.php';
-        include 'connect.php';
     ?>
+
     <main>
-        <h1>HOMEPAGE</h1>
-        <p>My paragraph</p>
+        <h1>Welcome Admin!</h1>
+        <p>Here you can upload pictures to the Gallery!</p>
     </main>
+
     <footer>
         <ul>
             <li><a href="about.php">About</a></li>
