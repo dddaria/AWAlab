@@ -41,7 +41,7 @@
             $email = strip_tags($email);
             $subject = strip_tags($subject);
             $message = strip_tags($message);
-        }
+        };
       ?>
     </main>
     <?php include 'footer.php';?>
