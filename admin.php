@@ -1,4 +1,14 @@
-<?php session_start();?>
+<?php
+    session_start();
+    //Checking if the user is admin or not
+    // if (isset($_SESSION["usertype"]) == "admin") {
+    //     header("Location: http://localhost/lab1/admin.php", true, 301);
+    // }
+    // else {
+    //     //if the user is not admin they can't access the page
+    //     header("Location: http://localhost/lab1/blocked.php", true, 301);
+    // };
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +21,6 @@
     <?php
         include 'header.php';
     ?>
-
     <main>
         <h1>WELCOME ADMIN!</h1>
         <p>Here you can upload pictures to the Gallery!</p><br>
