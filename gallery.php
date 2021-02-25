@@ -16,8 +16,21 @@
     <main>
         <h1>GALLERY</h1>
         <p>Browse book covers here!</p>
-        <table>
-        </table>
+        <ul id="bookcovers">
+        <?php
+            //selecting the image-names from DB
+            $stmt = $dbConn->prepare("SELECT name FROM image");
+            
+            //Putting the names into variables
+            $stmt->bind_result($filename);
+            $stmt->execute();
+
+            //Putting the names as a part of img-src
+            while ($stmt->fetch()) {
+                echo "<li class='book'><img src=img/uploads/".$filename."></li>";
+            };
+        ?>
+        </ul>
     </main>
     <?php include 'footer.php';?>
 </body>

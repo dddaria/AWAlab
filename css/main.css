@@ -1,6 +1,7 @@
 body {
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
+    background-color: rgb(233, 220, 205);
 }
 
 header {
@@ -139,4 +140,19 @@ form input {
     width: 50%;
     margin: 0 auto;
     margin-top: 20px;
+}
+
+#bookcovers {
+    columns: 3;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.book {
+    display: inline-block;
+    margin: 30px 20px;
+}
+
+.book img {
+    width: 100%;
 }
