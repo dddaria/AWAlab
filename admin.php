@@ -24,13 +24,12 @@
     <main>
         <h1>WELCOME ADMIN!</h1>
         <p>Here you can upload pictures to the Gallery!</p><br>
-        <form id="fileUpload" action="upload.php" method="post" enctype="multipart/form-data">
-        Select image to upload: <br>
-        <input type="file" name="fileUpload" id="fileUpload">
-        <input type="submit" value="Upload Image" name="submit">
-</form>
+        <form id="fileUpload" name="fileUpload" method="post" enctype="multipart/form-data">
+            Select image to upload: <br>
+            <input type="file" name="myFile" id="myFile">
+            <input type="submit" value="Upload Image" name="submitImage">
+        </form>
     </main>
-
     <footer>
         <ul>
             <li><a href="about.php">About</a></li>
