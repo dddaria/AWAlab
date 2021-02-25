@@ -13,7 +13,21 @@
 
     <main>
         <h1>CONTACT US</h1>
-        <p>My paragraph</p>
+        <p>We are happy to hear from you!</p><br>
+        <form id="contactform" action="">
+            <label for="fullname">Full name</label>
+            <input class="contact" type="text" id="fullname" name="fullname" placeholder="Your full name"><br>
+
+            <label for="email">Email</label>
+            <input class="contact" type="text" id="email" name="email" placeholder="Your email"><br>
+        
+            <label for="subject">Subject</label>
+            <input class="contact" type="text" id="subject" name="subject" placeholder="Subject"><br>
+
+            <textarea id="message" name="message" placeholder="Tell us what's on your mind"></textarea><br>
+            
+            <input type="submit" value="Send" name="sendMessage" id="send">
+      </form>
     </main>
     <?php include 'footer.php';?>
 </body>
