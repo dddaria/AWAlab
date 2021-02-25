@@ -29,6 +29,11 @@
             <input type="file" name="myFile" id="myFile">
             <input type="submit" value="Upload Image" name="submitImage">
         </form>
+        <?php 
+            if (isset($_POST['submitImage'])) {
+                fileUpload($_FILES['myFile']);
+            }
+        ?>
     </main>
     <footer>
         <ul>

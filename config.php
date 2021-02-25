@@ -19,13 +19,27 @@ if(isset($_SESSION["userIP"])) {
     };
 };
 
+//Function for reserving books
+function reserve($reserve,$BookID){
+    // Create connection
+    $dbConn = mysqli_connect($GLOBALS['host'], $GLOBALS['user'], $GLOBALS['password'], $GLOBALS['database']);
+    //Check connection
+    if($dbConn->connect_errno) {
+        echo "Failed to connect to database:" . $dbConn->connect_error;
+    }; 
+ 
+    $sql = "UPDATE Book SET Status='{$reserve}' WHERE BookID='{$BookID}'";
+    if ($dbConn->query($sql) === FALSE) {
+        echo "Error updating record: " . $dbConn->error;
+    }
+    $dbConn->close();
+};
+
 //Uploading images to the gallery page
-if (isset($_POST['submitImage'])) {
+function fileUpload($file) {
     $filename = $_FILES['myFile']['name'];
     $destination = 'img/uploads/' . $filename;
     $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    echo $destination;
 
     //The file on a temp directory on the server
     $file = $_FILES['myFile']['tmp_name'];
@@ -40,7 +54,7 @@ if (isset($_POST['submitImage'])) {
     else {
         //Moving the file to the server & adding it to the database
         if (move_uploaded_file($file, $destination)) {
-            $dbConn = mysqli_connect($host, $user, $password, $database);
+            $dbConn = mysqli_connect($GLOBALS['host'], $GLOBALS['user'], $GLOBALS['password'], $GLOBALS['database']);
 
             $sql = " INSERT INTO image (name, size) VALUES ('$filename', '$size')";
             if(mysqli_query($dbConn, $sql)) {
@@ -51,5 +65,5 @@ if (isset($_POST['submitImage'])) {
             }
         }
     }
-}
+};
 ?>
