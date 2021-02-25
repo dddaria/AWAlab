@@ -6,6 +6,7 @@
                 <li><a href="index.php" class="<?php echo($currentPage == 'index.php' || $currentPage == '') ? 'activelink' : ''?>">Home</a></li>
                 <li><a href="about.php" class="<?php echo($currentPage == 'about.php') ? 'activelink' : ''?>">About Bookify</a></li>
                 <li><a href="browse.php" class="<?php echo($currentPage == 'browse.php') ? 'activelink' : ''?>">Browse Books</a></li>
+                <li><a href="gallery.php" class="<?php echo($currentPage == 'gallery.php') ? 'activelink' : ''?>">Gallery</a></li>
                 <li><a href="mybooks.php" class="<?php echo($currentPage == 'mybooks.php') ? 'activelink' : ''?>">My Books</a></li>
                 <li><a href="contact.php" class="<?php echo($currentPage == 'contact.php') ? 'activelink' : ''?>">Contact</a></li>
                 <?php
