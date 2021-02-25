@@ -14,7 +14,7 @@
     <main>
         <h1>CONTACT US</h1>
         <p>We are happy to hear from you!</p><br>
-        <form id="contactform" action="">
+        <form id="contactform" action="post">
             <label for="fullname">Full name</label>
             <input class="contact" type="text" id="fullname" name="fullname" placeholder="Your full name"><br>
 
@@ -28,6 +28,21 @@
             
             <input type="submit" value="Send" name="sendMessage" id="send">
       </form>
+
+      <?php 
+        //Protection from XSS
+        if(isset($_POST['send'])) {
+            $fullname = $_POST['fullname'];
+            $email = $_POST['email'];
+            $subject = $_POST['subject'];
+            $message = $_POST['message'];
+
+            $fullname = strip_tags($fullname);
+            $email = strip_tags($email);
+            $subject = strip_tags($subject);
+            $message = strip_tags($message);
+        }
+      ?>
     </main>
     <?php include 'footer.php';?>
 </body>
