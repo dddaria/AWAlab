@@ -14,7 +14,7 @@
     <main>
         <h1>CONTACT US</h1>
         <p>We are happy to hear from you!</p><br>
-        <form id="contactform" action="post">
+        <form id="contactform" method="post">
             <label for="fullname">Full name</label>
             <input class="contact" type="text" id="fullname" name="fullname" placeholder="Your full name"><br>
 
@@ -26,21 +26,28 @@
 
             <textarea id="message" name="message" placeholder="Tell us what's on your mind"></textarea><br>
             
-            <input type="submit" value="Send" name="sendMessage" id="send">
+            <input type="submit" value="Send" name="send" id="send">
       </form>
 
       <?php 
-        //Protection from XSS
         if(isset($_POST['send'])) {
             $fullname = $_POST['fullname'];
             $email = $_POST['email'];
             $subject = $_POST['subject'];
             $message = $_POST['message'];
 
+            //Protection from XSS
             $fullname = strip_tags($fullname);
             $email = strip_tags($email);
             $subject = strip_tags($subject);
             $message = strip_tags($message);
+
+            //Sending the email (doesn't work)
+            $header = "From: $fullname Email: $email";
+            $sent = mail('admin@bookify.com', $header, $subject, $message);
+
+            //Redirect to homepage
+            header("Location: http://localhost/lab1/index.php", true, 301);
         };
       ?>
     </main>
