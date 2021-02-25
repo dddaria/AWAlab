@@ -45,11 +45,11 @@ function fileUpload($file) {
     $file = $_FILES['myFile']['tmp_name'];
     $size = $_FILES['myFile']['size'];
 
-    if (!in_array($extension, ['jpeg', 'png','jpg','gif'])) {
-        echo "Allowed image types are: .jpeg, .png, .jpg and .gif";
+    if (!in_array($extension, ['jpeg', 'png','jpg','gif', 'PNG', 'JPG', 'GIF', 'JPEG'])) {
+        echo "<br><p class='warning'>Allowed image types are: .jpeg, .png, .jpg and .gif</p>";
     }
     else if ($file > 10000000) {
-        echo "Your image is too large.";
+        echo "<br><p class='warning'>Your image is too large.</p>";
     }
     else {
         //Moving the file to the server & adding it to the database
@@ -58,10 +58,10 @@ function fileUpload($file) {
 
             $sql = " INSERT INTO image (name, size) VALUES ('$filename', '$size')";
             if(mysqli_query($dbConn, $sql)) {
-                echo "File uploaded";
+                echo "<br><p>File uploaded</p>";
             }
             else {
-                echo "Failed to upload file. Try again.";
+                echo "<br><p class='warning'>Failed to upload file. Try again.</p>";
             }
         }
     }
