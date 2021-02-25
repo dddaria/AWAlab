@@ -15,6 +15,7 @@
                         else {
                             echo "<li><a href='admin.php'>Admin</a></li>";
                         }
+                        echo "<li><a href='logout.php'>Log out</a></li>";
                     }
                     else {
                         if($currentPage == 'login.php') {

@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php 
+session_start();
+session_unset();
+session_destroy();
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,15 +18,8 @@
     ?>
 
     <main>
-        <h1>WELCOME ADMIN!</h1>
-        <p>Here you can upload pictures to the Gallery!</p><br>
-        <form id="fileUpload" action="upload.php" method="post" enctype="multipart/form-data">
-        Select image to upload: <br>
-        <input type="file" name="fileUpload" id="fileUpload">
-        <input type="submit" value="Upload Image" name="submit">
-</form>
+        <h1>You have successfully logged out!</h1>
     </main>
-
     <footer>
         <ul>
             <li><a href="about.php">About</a></li>
