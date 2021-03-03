@@ -66,4 +66,31 @@ function fileUpload($file) {
         }
     }
 };
+
+//Getting info from API function
+function callCatAPI($url, $value) {
+    //starting the call
+    $cURLconn = curl_init();
+
+    //Setting headers
+    curl_setopt($cURLconn, CURLOPT_URL, $url);
+    curl_setopt($cURLconn, CURLOPT_RETURNTRANSFER, true);
+
+    //recieving response
+    $JSONresponse = curl_exec($cURLconn);
+    curl_close($cURLconn);
+    
+    //decoding the response
+    $response = json_decode($JSONresponse);
+    
+    //Checking if the user asked for breed/fact
+    if ($value == 1) {
+        //printing the random cat breed
+        echo "<p>" . $response->data[rand(0,40)]->breed . "</p>";
+    }
+    else if ($value == 2) {
+        //printing the fact
+        echo "<p>" . $response->fact . "</p>";
+    }
+};
 ?>

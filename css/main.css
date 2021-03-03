@@ -184,3 +184,19 @@ form input {
     margin-top: 10px;
     font-size: 16px;
 }
+
+#cats {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#cats button {
+    width: 30%;
+    margin: 40px;
+    padding: 20px 40px;
+    background-color: rgb(230, 184, 116);
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+}
