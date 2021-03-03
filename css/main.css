@@ -200,3 +200,22 @@ form input {
     border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
 }
+
+#picGallery {
+    display: inline-block;
+    margin: 30px 20px;
+}
+
+#picGallery li img{
+    width: 25%;
+    margin-top: 30px;
+}
+
+#galleryBtn {
+    background-color: rgb(230, 184, 116);
+    color: black;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+}
