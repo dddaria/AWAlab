@@ -48,7 +48,7 @@ function fileUpload($file) {
     if (!in_array($extension, ['jpeg', 'png','jpg','gif', 'PNG', 'JPG', 'GIF', 'JPEG'])) {
         echo "<br><p class='warning'>Allowed image types are: .jpeg, .png, .jpg and .gif</p>";
     }
-    else if ($file > 10000000) {
+    else if ($size > 10000000) {
         echo "<br><p class='warning'>Your image is too large.</p>";
     }
     else {
